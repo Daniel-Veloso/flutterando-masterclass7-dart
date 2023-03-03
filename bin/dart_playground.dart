@@ -14,6 +14,10 @@ void main(List<String> arguments) {
 
   //fibonacci com função recursiva
   print("Termo 10 de fibonacci: ${fibRec(10)}");
+
+  //regra de tres
+  // a / b = c / d
+  print("Regra 3: ${regraDeTres(a: 1000, b: 500, d: 50)}");
 }
 
 double calcularIMC(double peso, double altura){
@@ -44,4 +48,20 @@ int fibRec (int n){
     } else {
       return fibRec(n - 1) + fibRec(n - 2);
     }
+}
+
+double regraDeTres({double a = 0, double b = 0, double c = 0, double d = 0}){
+  if(a == 0){
+    a = (b * c) / d;
+    return a;
+  } else if(b == 0){
+    b = (a * d) / c;
+    return b;
+  } else if(c == 0){
+    c = (a * d) / b;
+    return c;
+  } else {
+    d = (b * c) / a;
+    return d;
+  }
 }
